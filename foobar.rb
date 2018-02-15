@@ -1,8 +1,13 @@
 class Foobar
 
   def self.baz(a)
-    # Class method, not an instance method
-    # Call with `Foobar.baz`
-    # Q4 CODE HERE
+    a = a.map {|item| item = item.to_i + 2}
+
+    a = a.select {|item| item % 2 == 0}
+    a = a.uniq
+    a = a.select {|item| item < 10}
+    accum = 0
+    a.each{ |item| accum += item}
+    return accum
   end
 end
