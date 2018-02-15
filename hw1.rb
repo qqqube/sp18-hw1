@@ -55,9 +55,7 @@ def scrabble(word)
     z: 10,
   }
   sum = 0
-  #a = word.split("").each {|item| sum += values["#{item}"]}
   a = word.split("").map{|item| item = values[item.to_sym]}.each{|item| sum += item}
-
   return sum
 
 
